@@ -88,13 +88,13 @@ public class PublishDatasetCommand extends AbstractCommand<Dataset> {
                         idServiceBean.createIdentifier(theDataset);
                         theDataset.setGlobalIdCreateTime(new Timestamp(new Date().getTime()));
                     } else {
-                        theDataset.setIdentifier(ctxt.datasets().generateIdentifierSequence(protocol, authority, theDataset.getDoiSeparator()));
-                        if (!idServiceBean.alreadyExists(theDataset)) {
-                            idServiceBean.createIdentifier(theDataset);
+//                        theDataset.setIdentifier(ctxt.datasets().generateIdentifierSequence(protocol, authority, theDataset.getDoiSeparator()));
+//                        if (!idServiceBean.alreadyExists(theDataset)) {
+//                            idServiceBean.createIdentifier(theDataset);
                             theDataset.setGlobalIdCreateTime(new Timestamp(new Date().getTime()));
-                        } else {
-                            throw new IllegalCommandException("This dataset may not be published because its identifier is already in use by another dataset.", this);
-                        }
+//                        } else {
+//                            throw new IllegalCommandException("This dataset may not be published because its identifier is already in use by another dataset.", this);
+//                        }
                     }
                 } catch (Throwable e) {
                     // TODO add a variant for EZId
